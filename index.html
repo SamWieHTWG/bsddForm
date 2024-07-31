@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Product Specification</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Product Specification</h2>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
+    <script src="createForm.js"></script>
+    <script>
+
+      var state = 0;
+     
+        var formData = {
+          "fields": [
+            {           
+              "desc": "IfcSearchTerm",
+              "type": "text"
+            }
+          ]
+        };
+
+      document.addEventListener("DOMContentLoaded", function () {
+        
+        createForm(formData)
+
+
+        async function handleFormSubmit(event) {
+            state = state + 1;
+          event.preventDefault();
+        const form = document.getElementById('dynamicForm');
+          const formDataResp = new FormData(form);
+          const values = {};
+          formDataResp.forEach((value, key) => {
+            // Collect all values, and store them in an object
+            if (!values[key]) {
+              values[key] = value;
+            } else {
+              if (!Array.isArray(values[key])) {
+                values[key] = [values[key]]; // Make it an array if multiple values
+              }
+              values[key].push(value);
+            }
+          });
+
+
+          if(state==1)
+          {
+            // async function searchIfcElements(searchTerm) 
+            var  els = await searchIfcElements(values.IfcSearchTerm);
+
+                  let input = {
+                  desc: "IfcClass",
+                  type: "radio",
+                  options: [],
+                  htmlBefore: "<h4>Choose IFC Class</h4>"
+                };
+
+            els.forEach(el => {
+                input.options.push({ value: el.name, link: el.uri });
+            });
+             var formData = { 
+            "fields": [input]}
+
+          }
+          if(state==2)
+          {
+            var props =  await searchIfcProperties(values.IfcClass);
+                  const fields = [];
+            props.forEach(prop => {
+            let input = {
+                desc: prop.name,
+                link: prop.uri,
+                htmlBefore: `<h4>${prop.name}</h4><p>${prop.description} <a href="${prop.uri}" target="_blank">More Information</a></p>`
+            };
+
+            if (!prop.hasOwnProperty('dataType')) {
+                return; // continue in forEach is achieved using return
+            }
+
+                const dataType = prop.dataType;
+                if (dataType === "String") {
+                    input.type = "text";
+                } else if (["Real", "Integer", "Boolean"].includes(dataType)) {
+                    input.type = "number";
+                } else {
+                    console.log(dataType);
+                    return; // Skip unsupported data types
+                }
+
+                fields.push(input);
+            });
+            var formData = { 
+            "fields": fields}
+          }
+          document.querySelector(".container").innerHTML = ''; // Clear existing content
+          createForm(formData); // Create a new form with new fields
+        }
+
+        
+        // createForm(initialFormData); // Create the initial form
+        document.querySelector('.container').addEventListener('submit', handleFormSubmit); // Handle the form submission
+      });
+    </script>
+  </body>
+</html>

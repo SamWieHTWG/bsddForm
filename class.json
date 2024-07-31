@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Window",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindow",
+    "referenceCode": "IfcWindow",
+    "classType": "Class",
+    "definition": "The window is a building element that is predominately used to provide natural light and fresh air. It includes vertical opening but also horizontal opening such as skylights or light domes. It includes constructions with swinging, pivoting, sliding, or revolving panels and fixed panels. A window consists of a lining and one or several panels."
+  },
+  {
+    "name": "Frost Sensor",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSensorFROSTSENSOR",
+    "referenceCode": "IfcSensorFROSTSENSOR",
+    "classType": "Class",
+    "definition": "A device that senses or detects frost on a window."
+  },
+  {
+    "name": "Fenestration",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBuiltSystemFENESTRATION",
+    "referenceCode": "IfcBuiltSystemFENESTRATION",
+    "classType": "Class",
+    "definition": "[[System]] of doors, windows, and other fillings in openings in a built envelope that are designed to permit the passage of air or light."
+  },
+  {
+    "name": "Open Ing",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcOpeningElementOPENING",
+    "referenceCode": "IfcOpeningElementOPENING",
+    "classType": "Class",
+    "definition": "An opening as subtraction feature that cuts through the element it voids. It thereby creates a hole. An opening in addition has a particular meaning for either providing a void for doors or windows, or an opening to permit flow of air and passing of light."
+  },
+  {
+    "name": "Lintel",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBeamLINTEL",
+    "referenceCode": "IfcBeamLINTEL",
+    "classType": "Class",
+    "definition": "A beam or horizontal piece of material over an opening (e.g. door, window)."
+  },
+  {
+    "name": "Awning",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcShadingDeviceAWNING",
+    "referenceCode": "IfcShadingDeviceAWNING",
+    "classType": "Class",
+    "definition": "A rooflike shelter of canvas or other material extending over a doorway, from the top of a window, over a deck, or similar, in order to provide protection, as from the sun."
+  },
+  {
+    "name": "Shutter",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcShadingDeviceSHUTTER",
+    "referenceCode": "IfcShadingDeviceSHUTTER",
+    "classType": "Class",
+    "definition": "A mechanical device that limits the passage of light. Often used as a a solid or louvered movable cover for a window."
+  },
+  {
+    "name": "Light Dome",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindowLIGHTDOME",
+    "referenceCode": "IfcWindowLIGHTDOME",
+    "classType": "Class",
+    "definition": "A special window that lies horizonally in a roof slab opening."
+  },
+  {
+    "name": "Sky Light",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindowSKYLIGHT",
+    "referenceCode": "IfcWindowSKYLIGHT",
+    "classType": "Class",
+    "definition": "A window within a sloped building element, usually a roof slab."
+  },
+  {
+    "name": "Window",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindowWINDOW",
+    "referenceCode": "IfcWindowWINDOW",
+    "classType": "Class",
+    "definition": "A standard window usually within a wall opening, as a window panel in a curtain wall, or as a 'free standing' window."
+  },
+  {
+    "name": "Property Set: Environmental Impact Indicators",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/Pset_EnvironmentalImpactIndicators",
+    "referenceCode": "Pset_EnvironmentalImpactIndicators",
+    "classType": "GroupOfProperties",
+    "definition": "Environmental impact indicators are related to a given functional unit (ISO 14040 concept). An example of functional unit is a 'Double glazing window with PVC frame' and the unit to consider is 'one square meter of opening elements filled by this product.; Indicators values are valid for the whole life cycle or only a specific phase (see [[LifeCyclePhase]] property). Values of all the indicators are expressed per year according to the expected service life. The first five properties capture the characteristics of the functional unit. The following properties are related to environmental indicators.; There is a consensus agreement international for the five one. Last ones are not yet fully and formally agreed at the international level."
+  },
+  {
+    "name": "Property Set: Door Window Glazing Type",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/Pset_DoorWindowGlazingType",
+    "referenceCode": "Pset_DoorWindowGlazingType",
+    "classType": "GroupOfProperties",
+    "definition": "Properties common to the definition of the glazing component of occurrences of [[IfcDoor]] and [[IfcWindow]], used for thermal and lighting calculations."
+  },
+  {
+    "name": "Property Set: Window Lining Properties",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/Pset_WindowLiningProperties",
+    "referenceCode": "Pset_WindowLiningProperties",
+    "classType": "GroupOfProperties",
+    "definition": "Properties of the window lining."
+  },
+  {
+    "name": "Property Set: Window Panel Properties",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/Pset_WindowPanelProperties",
+    "referenceCode": "Pset_WindowPanelProperties",
+    "classType": "GroupOfProperties",
+    "definition": "Properties of the window panel."
+  },
+  {
+    "name": "Property Set: Window Common",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/Pset_WindowCommon",
+    "referenceCode": "Pset_WindowCommon",
+    "classType": "GroupOfProperties",
+    "definition": "Properties common to the definition of all occurrences of Window."
+  },
+  {
+    "name": "Quantity Set: Window Base Quantities",
+    "uri": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/Qto_WindowBaseQuantities",
+    "referenceCode": "Qto_WindowBaseQuantities",
+    "classType": "GroupOfProperties",
+    "definition": "Base quantities that are common to the definition of all occurrences of windows."
+  }
+]
